@@ -22,6 +22,7 @@ module FastlaneCore
         visit CREATE_APP_URL
         wait_for_elements("*[name='appIdName']").first.set @config[:app_name]
         wait_for_elements("*[name='explicitIdentifier']").first.set @config[:bundle_identifier]
+        wait_for_elements("*[name='push']").first.click
         click_next
 
         sleep 5 # sometimes this takes a while and we don't want to timeout
